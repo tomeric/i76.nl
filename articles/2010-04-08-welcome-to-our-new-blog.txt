@@ -1,0 +1,6 @@
+--- 
+title: Welcome to our new blog
+date: 08/04/2010
+
+Once upon a time...
+
