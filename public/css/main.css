@@ -1,110 +1,250 @@
-html { margin: 20px }
+@import "reset.css";
+
+* * html #example { background: url(../layout.png) top center no-repeat; width: 975px; height: 1100px; position: absolute; top: 0; left: 50%; margin-left: -483px; }
+
+html {
+  background: url(img/main-stripes.png) top left repeat;
+}
+
 body {
+  background: url(img/white.png) top left repeat-x;
+  font: normal 13px/20px 'Tahoma', sans-serif;
+  color: #727272;
+  padding: 0;
+}
+
+p {
+  margin: 0 0 9px 0;
+}
+
+ul {
+  list-style: square inside;
+}
+
+#wrapper {
+  background: url(img/main.png) top left repeat-y;
+  width: 911px;
   margin: 0 auto;
-  font-family: 'Baskerville', Georgia, Times, serif;
-  font-size: 20px;
-  line-height: 30px;
-  padding: 15px;
-  width: 720px;
-
-}
-header, footer, section, article {
-	display: block;
-}
-#content {
-}
-#by {
-	font-style: italic;
-  margin-right: 5px;
-	font-size: 28px;
-}
-#caption {
-	position: absolute;
-	font-size: 24px;
-	margin: -135px 0 0 70px;
-}
-#path {
-	color: #b53131;
-}
-.date {
-  font-style: italic;
-  float: right;
-  line-height: 43px;
-  margin-right: 30px;
-}
-a {
-  color: #b83000;
-}
-h1 a {
-  color: black;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-body > header > h1 {
-	border-left: 30px solid black;
-	padding-left: 30px;
-  font-size: 201px;
-  margin: 100px 0 15px 0;
-  font-weight: normal;
-}
-.post header {
-	margin-bottom: 10px;
-}
-.post .body p:first-child {
-	margin-top: 0;
-}
-.post .body p:last-child {
-	margin-bottom: 0;
-}
-.post {
-	margin-bottom: 30px;
-}
-.post:last-child {
-  margin-bottom: 10px;
-}
-.post p {
-  margin: 10px 0;
-}
-.post .more {
-  margin-top: -10px;
-  margin-right: 30px;
-  font-style: italic;
-  text-align: right;
-}
-.more a {
-  text-decoration: none;
-}
-.more a:hover { text-decoration: underline }
-body > header {
-	display: block;
-	padding-top: 30px;
-	line-height: 180px;
-	margin-bottom: 20px;
-}
-h1, h2, h3, h4 {
-  display: inline;
-  margin: 0;
-  font-weight: 600;
-}
-ul, li {
-  list-style-type: none;
-}
-code {
-  font-family: 'Anonymous Pro', 'Bitstream Vera Sans', 'Monaco', Courier, mono;
-}
-pre {
-  padding: 20px;
-}
-blockquote {
-  font-style: italic;
+  padding: 0 29px 0 32px;
+  overflow: hidden;
 }
 
-body > footer {
-  text-align: left;
-  margin-left: 10px;
-	font-style: italic;
-  font-size: 18px;
-  color: #888;
-}
+  header.main {
+    display: block;
+    font-weight: bold;
+    background: url(img/ruby.jpg) no-repeat top left;
+    height: 320px;
+    position: relative;
+  }
+  
+    header.main h1 {
+      background: url(img/h1.png) top left no-repeat;
+      width: 103px;
+      height: 93px;
+      position: absolute;
+      top: 202px;
+      left: 0;
+    }
+    
+      header.main h1 a {
+        display: block;
+        height: 63px;
+        width: 63px;
+        padding: 15px 20px 15px 19px;
+      }
+      
+      header.main h1 a:hover {
+        border: 2px solid #ff5703;
+        border-left: 0;
+        margin-top: -2px;
+      }
+      
+      header.main h2 {
+        background: url(img/header-stripes.png) top left repeat;
+        color: #fff;
+        text-shadow:1px 2px 2px #000;
+        text-transform: uppercase;
+        float: left;
+        padding: 5px 10px 4px 10px;
+        font-family: 'Myriad Pro', 'Trebuchet MS', sans-serif;
+        font-size: 42px;
+        line-height: 42px;
+        position: absolute;
+        left: 115px;
+        top: 202px;
+        opacity: 0.97;
+      }
+      
+        header.main h2 sub {
+          display: block;
+          text-shadow: 1px 2px 2px #564343;
+          font-size: 22px;
+          line-height: 20px;
+          opacity: 0.95;
+        }
+        
+      header.main h2.ie span { filter: shadow(color=#000000,direction=145,strength=3) alpha(opacity=95); display: block; zoom: 1; }
+        header.main h2.ie sub { filter: shadow(color=#564343,direction=115,strength=1) alpha(opacity=90); display: block; zoom: 1; }
+  
+  nav ol {
+    height: 46px;
+    margin: 0 0 18px 0;
+    background: #000;
+    list-style: none;
+  }
+  
+    nav li {
+      float: left;
+    }
+    
+      nav li a {
+        color: #fff;
+        background: url(img/nav.png) no-repeat 0 0;
+        display: block;
+        float: left;
+        font-size: 16px;
+        line-height: 33px;
+        text-transform: uppercase;
+        margin: 8px 8px 0;
+        padding: 0 16px 5px 16px;
+        text-decoration: none;       
+      }
+      
+      nav li a:hover {
+        background-position: 0 -37px;
+        color: #564343; 
+      }
+      
+      nav li.selected a {
+        background-color: #fff;
+        color: #564343;        
+      }
+  
+  #content {
+    width: 596px;
+    padding-bottom: 32px;
+    float: left;
+    overflow: hidden;
+  }
+  
+    #content h2 {
+      background: url(img/arrow.png) top left no-repeat;
+      display: block;
+      margin: 0 0 9px 0;
+      padding: 5px 10px 0px 60px;
+      line-height: 40px;
+      min-height: 42px;
+      font-family: 'Myriad Pro', 'Trebuchet MS', sans-serif;
+      font-size: 24px;
+      color: #454545;
+      text-shadow: 1px 1px 2px #fff;
+      text-transform: uppercase;
+    }
+    
+    #content h2.with-subtitle {
+      line-height: 22px;
+      font-size: 22px;
+      padding: 6px 10px 0 60px;
+    }
+    
+      #content h2 sub {
+        color: #ff6010;
+        text-shadow: 1px 1px 2px #fff;
+        font-size: 18px;
+      }
+      
+      #content h2.with-subtitle sub {
+        display: block;
+        line-height: 15px;
+        font-size: 17px;
+        margin-top: -1px;
+        margin-bottom: -5px;
+        text-transform: none;
+      }    
+    
+  #left-content {
+    width: 283px;
+    float: left; 
+    margin: 0 30px 0 0;   
+    padding-bottom: 32px;   
+  }
+  
+  #right-content {
+    width: 283px;
+    float: left;
+    padding-bottom: 32px;
+  }
+  
+  aside {
+    width: 283px;
+    float: right;
+    font-size: 12px;
+    line-height: 16px;
+    padding-bottom: 32px;
+  }
+  
+    aside > .portfolio_item h2,
+    aside > .portfolio_item p { display: none; height: 0px; }
+    aside > .portfolio_item p.image { display: block; height: auto; }
+    
+    aside > .portfolio_item:hover h2,
+    aside > .portfolio_item:hover p { display: block; height: auto; }
+  
+  footer {
+    display: block;
+    overflow: hidden;
+    width: 909px;
+    margin: 32px 0 0 0;
+    padding: 18px 0;
+    background: #000 url(img/i76.png) 18px 22px no-repeat;
+    color: #eee;
+    font-size: 13px;
+    line-height: 18px;
+  }
+  
+    footer h3 {
+      color: #fff;
+      margin: 0 0 4px 0;
+    }
+    
+    footer a {
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    footer ul {
+      list-style: square outside;
+    }
+    
+    footer a:hover {
+      text-decoration: underline;
+    }
+    
+    footer img {
+      line-height: 18px;
+      vertical-align: middle;
+    }
+    
+    footer #feeds {
+      width: 253px;
+      float: left; 
+      margin: 0 30px 0 90px;
+    }
+    
+      footer #feeds img {
+        margin-right: 4px;
+      }
+
+    footer #links {
+      width: 253px;
+      float: left; 
+    }
+
+    footer #contact {
+      width: 253px;
+      float: right; 
+    }
+
+    footer address {
+      font-style: normal;
+    }

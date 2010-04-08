@@ -1,3 +1,6 @@
+- body_class  = @body_class  || "home"
+- sub_title   = @sub_title   || "What are we doing? <sub>Drinkin' coffee!</sub>"
+- current_tab = @current_tab || :home
 !!!
 %html{ :lang => "nl" }
   %head
@@ -6,6 +9,61 @@
     %link{ :rel => "stylesheet", :type => "text/css", :href => "/css/main.css" }
     %link{ :rel => "alternate", :type => "application/atom+xml", :title => "#{title} - Feed", :href => "/index.xml" }
     %meta{ :http_equiv => "Content-Type", :content => "text/html" }
-  %body
-    %section= yield
-    %footer Powered by <a href="http://cloudhead.io/toto">toto</a>
+  %body{ :class => body_class }
+    #wrapper
+      %header.main
+        %h1
+          %a{ :href => "/" }
+            %img{ :src => "/images/i76.png", :alt => "i76" }
+        %h2= sub_title
+
+      %nav
+        %ol
+          %li{ :class => (current_tab == :home ? "selected" : nil) }
+            %a{ :href => "/" } Home
+          %li{ :class => (current_tab == :archives ? "selected" : nil) }
+            %a{ :href => "/archives" } Archives
+
+      %section#content
+        = yield
+   
+      %aside
+        .portfolio_item
+          %h2 Restaurantgids Eet.nu
+          %img{ :src => "/images/portfolio/eet.nu.png", :alt => "Restaurantgids Eet.nu" }
+          %summary
+            %p Cras adipiscing lectus ut augue commodo rhoncus lacinia eget justo. Etiam vitae ligula dictum ante viverra dapibus.
+        
+      %footer
+        #feeds
+          %h2 Feeds
+          %ul
+            %li
+              %a{ :href => "/index.xml", :rel => "alternate" }
+                %img{ :src => "images/rss.png", :alt => "RSS" } Weblog
+            %li
+              %a{ :href => "http://twitter.com/i76" }
+                %img{ :src => "images/twitter.png", :alt => "Twitter" } Twitter
+        
+        #links
+          %h2 Links
+          %ul
+            %li
+              %a{ :href => "http://www.eet.nu/" }  Eet.nu
+            %li
+              %a{ :href => "http://github.com/i76" }  Github
+
+        #contact
+          %h2 Contact
+          %address
+            Brugstraat 77
+            %br
+            6131 AC
+            %br
+            Sittard
+            %br
+            %br
+            <abbr>T</abbr>: 046-4007004
+            %br
+            <abbr>F</abbr>: 046-4007004
+    %script{ :type => "text/javascript", :src => "/js/i76.js" }
