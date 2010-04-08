@@ -1,0 +1,9 @@
+%h1= path
+- if archives.length > 0
+  %ul
+    - archives.each do |entry|
+      %li
+        %a{ :href => entry.path }= entry.title
+        
+  
+

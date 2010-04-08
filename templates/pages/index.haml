@@ -1,0 +1,15 @@
+- if articles.length > 0
+  %section#articles
+    - articles[0...3].each do |article|
+      %article.post
+        %header
+          %h1
+            %a{ :href => article.path }= article.title
+            %span.date= article.date
+          
+        %section.summary
+          = article.summary
+  
+  - if articles.length > 3
+    %section#archives
+      = archives[3..-1]

@@ -1,4 +1,4 @@
-
+require 'haml'
 require 'toto'
 
 # Rack config
@@ -26,6 +26,9 @@ toto = Toto::Server.new do
   # set :summary,   :max => 150, :delim => /~/                # length of article summary and delimiter
   # set :ext,       'txt'                                     # file extension for articles
   # set :cache,      28800                                    # cache duration, in seconds
+  set :to_html,     lambda { |path, page, ctx|
+      ::Haml::Engine.new(File.read("#{path}/#{path}.haml"), :format => :html5).render(ctx)
+    }
 
   set :date, lambda {|now| now.strftime("%B #{now.day.ordinal} %Y") }
 end

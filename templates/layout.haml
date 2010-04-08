@@ -1,0 +1,11 @@
+!!!
+%html{ :lang => "nl" }
+  %head
+    %meta{ :charset => "utf-8" }
+    %title= title
+    %link{ :rel => "stylesheet", :type => "text/css", :href => "/css/main.css" }
+    %link{ :rel => "alternate", :type => "application/atom+xml", :title => "#{title} - Feed", :href => "/index.xml" }
+    %meta{ :http_equiv => "Content-Type", :content => "text/html" }
+  %body
+    %section= yield
+    %footer Powered by <a href="http://cloudhead.io/toto">toto</a>
