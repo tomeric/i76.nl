@@ -13,7 +13,8 @@ task :new do
   article << "\n"
   article << "Once upon a time...\n\n"
 
-  path = "#{Toto::Paths[:articles]}/#{Time.now.strftime("%Y-%m-%d")}#{'-' + slug if slug}.#{@config[:ext]}"
+  slug ||= Time.now.strftime("%Y-%m-%d")
+  path   = "#{Toto::Paths[:articles]}/#{slug}.#{@config[:ext]}"
 
   unless File.exist? path
     File.open(path, "w") do |file|
